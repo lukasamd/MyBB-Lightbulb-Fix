@@ -223,17 +223,18 @@ function build_forumbits($pid=0, $depth=1)
 				{
 					$parent_counters['viewers'] += $forum['viewers'];
 				}
+			}
 
-				// Get the lightbulb status indicator for this forum based on the lastpost
-				$lightbulb = get_forum_lightbulb($forum, $lastpost_data, $showlockicon, $unread, $subforums_exist);
-				
-				if ($lightbulb['unread'] == true)
-				{
-					$parent_unread = true;
-					$unread = true; 
-					$forum['unread'] = true;
-					$forum_info['unread'] = true;
-				}
+			// Get the lightbulb status indicator for this forum based on the lastpost
+			$lightbulb = get_forum_lightbulb($forum, $lastpost_data, $showlockicon, $unread, $subforums_exist);
+			
+			if ($lightbulb['unread'] == true)
+			{
+				$parent_unread = true;
+				$unread = true; 
+				$forum['unread'] = true;
+				$forum_info['unread'] = true;
+			}
 
 			// Done with our math, lets talk about displaying - only display forums which are under a certain depth
 			if($depth > $showdepth)
