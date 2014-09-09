@@ -197,7 +197,8 @@ function build_forumbits($pid=0, $depth=1)
 			if($hidelastpostinfo == true)
 			{
 				$lastpost_data = array(
-					'lastpost' => 0
+					'lastpost' => 0,
+                    'lastposter' => ''
 				);
 			}
 			
